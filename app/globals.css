@@ -16,63 +16,105 @@ body {
   padding: 0;
 }
 body {
-  background-color: #cacbcd;
-  background-image: linear-gradient(to bottom, #d1d2d3 60%, #e0e0e0 60%);
-  background-size: 100% 7px;
+  background-color: #fff;
   font-family: var(--font-o);
+  max-height: 100vh;
+  overflow: hidden;
 }
 .grandCntn {
+  --blue-clr: #0365c8;
+
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  gap: 40px;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
   padding-inline: 3%;
-  padding-block: 7em 3em;
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
 }
+
+.grandCntn > img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  object-fit: cover;
+  object-position: center 39%;
+  filter: blur(7px) contrast(0.8);
+}
+
+
+
 .formCntn {
-  max-width: 638px;
+  max-width: 468px;
   width: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  border-radius: 5px;
+  border-radius: 10px;
   overflow: hidden;
+  background-color: #fff;
+  padding: 2.3em 20px;
+  gap: 15px;
 }
 .formTitle {
   width: 100%;
-  background-color: #092c74;
-  padding-block: 15px 20px;
   display: grid;
   place-items: center;
+  margin-bottom: 10px;
 }
 .formTitle h1 {
   width: 100%;
   text-align: center;
-  color: white;
-  font-family: var(--font-f);
-  font-size: 4em;
-  text-decoration: dashed;
-  /* text-decoration-line: underline; */
+  color: black;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 2.2em;
   text-decoration-thickness: 3px;
+  font-weight: 700;
+}
+
+.formTitle h1 span{
+  font-size: 1.1em;
+  color: var(--blue-clr);
+  font-style: italic;
+  font-weight: 400;
+  font-family: var(--font-a);
+}
+
+.docPreview{
+  width: 100%;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  color: black;
+  background-color: #48586148;
+  border-radius: 6px;
+  font-size: 0.9em;
+}
+
+.docName {
+  color: #626262;
   font-weight: 500;
 }
 
-.formTitle h1 sup{
-  font-size: 0.45em;
-  vertical-align: super;
+.docName b{
+  color: black;
 }
 
 .title_note{
-  background-color: #fafafa;
-  font-size: 1.5em;
+  font-size: 1.1em;
   text-align: center;
   font-weight: 500;
   color: black;
-  padding-block: 1.3em 0.5em;
+  /* padding-block: 1.3em 0.5em; */
 }
 
 @media screen and (max-width: 450px) {
@@ -81,25 +123,13 @@ body {
     background-image: none;
     background-size: 100%;
   }
-  .grandCntn {
-    padding-block: 3em 3.8em;
-  }
-  .formTitle {
-    padding-block: 10px 10px;
+
+  .docPreview{
+    font-size: 0.8em;
   }
 
-  .formTitle h1 {
-    font-size: 3em;
-    font-weight: 500;
-  }
-
-  .title_note{
-    background-color: #fafafa;
-    font-size: 1.27em;
-    text-align: center;
-    font-weight: 500;
-    color: black;
-    padding-block: 1.3em 0.5em;
+  .grandCntn > img{
+    object-position: center center;
   }
 }
 
@@ -114,16 +144,14 @@ body {
   min-height: 60px;
   width: 100%;
   background-color: #fafafa;
-  padding-block: 25px;
+  padding-block: 15px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .firstSection {
-  width: 70%;
-  max-width: 364px;
-  min-width: 295px;
+  width: 100%;
   display: flex;
   gap: 10px;
   flex-direction: column;
@@ -189,9 +217,9 @@ body {
   width: 100%;
   padding: 0 13px;
   background-color: #fff;
-  border: 1px solid #cccccc;
+  border: 1px solid #a9a9a999;
   color: #2e2e2e;
-  border-radius: 3px;
+  border-radius: 7px;
   font-size: 1.15em;
   outline: 3px solid transparent;
 
@@ -271,13 +299,13 @@ input[type="number"] {
 .LoginBtn {
   width: 100%;
   height: 45px;
-  background-color: #092c74;
+  background-color: var(--blue-clr);
   color: #fff;
   border: none;
-  border-radius: 3px;
+  border-radius: 8px;
   font-size: 14px;
   font-weight: 600;
-  margin-top: 22px;
+  margin-top: 8px;
   font-family: "Open Sans", sans-serif;
 
   cursor: pointer;
@@ -289,7 +317,6 @@ input[type="number"] {
 
 .userLinks {
   width: 100%;
-  margin-block: 28px 13px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -298,7 +325,6 @@ input[type="number"] {
 .userLinks a {
   font-size: 12px;
   font-weight: 400;
-  color: #092c74;
 }
 
 .userLinks p {
@@ -313,27 +339,25 @@ input[type="number"] {
 
 .formFooter {
   width: 100%;
-  background-color: #092c74;
-  height: 46px;
   display: flex;
   align-items: center;
   gap: 3px;
   justify-content: center;
+  color: black;
+  margin-top: -17px;
+}
+
+.formFooter p{
+  text-align: center;
+  font-size: 0.81em;
 }
 
 .formFooter a {
-  font-size: 12px;
   font-weight: 500;
-  color: white;
-  padding-inline: 24px;
-}
-.formFooter a:hover {
+  color: var(--blue-clr);
   text-decoration: underline;
 }
-.formFooter a.loc,
-.formFooter a.pol {
-  border-right: 1px solid white;
-}
+
 
 @media (prefers-color-scheme: dark) {
   html {
