@@ -55,6 +55,8 @@ body {
   font-size: 3em;
   font-family: var(--font-c);
   color: white;
+  width: 100%;
+  text-align: center;
 }
 
 .formCntn h2{
@@ -84,7 +86,10 @@ body {
     padding-block: 3em 3.8em;
   }
   .formTitle {
-    padding-block: 5px 15px;
+    padding-block: 15px 15px;
+  }
+  .formTitle > h1{
+    font-size: 2.15em;
   }
 }
 
