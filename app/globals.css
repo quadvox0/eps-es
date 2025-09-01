@@ -16,105 +16,62 @@ body {
   padding: 0;
 }
 body {
-  background-color: #fff;
+  background-color: #cacbcd;
+  background-image: linear-gradient(to bottom, #d1d2d3 60%, #e0e0e0 60%);
+  background-size: 100% 7px;
   font-family: var(--font-o);
-  max-height: 100vh;
-  overflow: hidden;
 }
 .grandCntn {
-  --blue-clr: #0365c8;
-
   width: 100%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
+  gap: 40px;
   flex-wrap: nowrap;
   align-items: center;
   justify-content: center;
   padding-inline: 3%;
-  position: relative;
-  isolation: isolate;
-  overflow: hidden;
+  padding-block: 7em 3em;
 }
-
-.grandCntn > img{
-  width: 100%;
-  height: 100%;
-  display: block;
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  object-fit: cover;
-  object-position: center 39%;
-  filter: blur(7px) contrast(0.8);
-}
-
-
-
 .formCntn {
-  max-width: 468px;
+  max-width: 638px;
   width: 100%;
   display: flex;
   flex-direction: column;
   flex-wrap: nowrap;
-  border-radius: 10px;
+  border-radius: 5px;
   overflow: hidden;
-  background-color: #fff;
-  padding: 2.3em 20px;
-  gap: 15px;
+  background-color: #fafafa;
 }
 .formTitle {
   width: 100%;
+  background-color: #092c74;
+  padding-block: 15px 15px;
   display: grid;
   place-items: center;
-  margin-bottom: 10px;
 }
-.formTitle h1 {
+
+.formTitle > h1{
+  font-size: 3em;
+  font-family: var(--font-c);
+  color: white;
+}
+
+.formCntn h2{
   width: 100%;
   text-align: center;
-  color: black;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 2.2em;
-  text-decoration-thickness: 3px;
-  font-weight: 700;
+  color: #092c74;
+  font-weight: 600;
+  font-size: 1.4em;
+  margin-top: 10px;
 }
 
-.formTitle h1 span{
-  font-size: 1.1em;
-  color: var(--blue-clr);
-  font-style: italic;
-  font-weight: 400;
-  font-family: var(--font-a);
-}
-
-.docPreview{
+.formCntn h3{
   width: 100%;
-  padding: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 10px;
-  color: black;
-  background-color: #48586148;
-  border-radius: 6px;
-  font-size: 0.9em;
-}
-
-.docName {
-  color: #626262;
-  font-weight: 500;
-}
-
-.docName b{
-  color: black;
-}
-
-.title_note{
-  font-size: 1.1em;
   text-align: center;
+  color: #7e7e7e;
+  font-size: 1.05em;
   font-weight: 500;
-  color: black;
-  /* padding-block: 1.3em 0.5em; */
 }
 
 @media screen and (max-width: 450px) {
@@ -123,13 +80,11 @@ body {
     background-image: none;
     background-size: 100%;
   }
-
-  .docPreview{
-    font-size: 0.8em;
+  .grandCntn {
+    padding-block: 3em 3.8em;
   }
-
-  .grandCntn > img{
-    object-position: center center;
+  .formTitle {
+    padding-block: 5px 15px;
   }
 }
 
@@ -144,14 +99,16 @@ body {
   min-height: 60px;
   width: 100%;
   background-color: #fafafa;
-  padding-block: 15px;
+  padding-block: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
 .firstSection {
-  width: 100%;
+  width: 70%;
+  max-width: 364px;
+  min-width: 295px;
   display: flex;
   gap: 10px;
   flex-direction: column;
@@ -217,9 +174,9 @@ body {
   width: 100%;
   padding: 0 13px;
   background-color: #fff;
-  border: 1px solid #a9a9a999;
+  border: 1px solid #cccccc;
   color: #2e2e2e;
-  border-radius: 7px;
+  border-radius: 3px;
   font-size: 1.15em;
   outline: 3px solid transparent;
 
@@ -299,13 +256,13 @@ input[type="number"] {
 .LoginBtn {
   width: 100%;
   height: 45px;
-  background-color: var(--blue-clr);
+  background-color: #092c74;
   color: #fff;
   border: none;
-  border-radius: 8px;
+  border-radius: 3px;
   font-size: 14px;
   font-weight: 600;
-  margin-top: 8px;
+  margin-top: 22px;
   font-family: "Open Sans", sans-serif;
 
   cursor: pointer;
@@ -317,6 +274,7 @@ input[type="number"] {
 
 .userLinks {
   width: 100%;
+  margin-block: 28px 13px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -325,6 +283,7 @@ input[type="number"] {
 .userLinks a {
   font-size: 12px;
   font-weight: 400;
+  color: #092c74;
 }
 
 .userLinks p {
@@ -339,25 +298,27 @@ input[type="number"] {
 
 .formFooter {
   width: 100%;
+  background-color: #092c74;
+  height: 46px;
   display: flex;
   align-items: center;
   gap: 3px;
   justify-content: center;
-  color: black;
-  margin-top: -17px;
-}
-
-.formFooter p{
-  text-align: center;
-  font-size: 0.81em;
 }
 
 .formFooter a {
+  font-size: 12px;
   font-weight: 500;
-  color: var(--blue-clr);
+  color: white;
+  padding-inline: 24px;
+}
+.formFooter a:hover {
   text-decoration: underline;
 }
-
+.formFooter a.loc,
+.formFooter a.pol {
+  border-right: 1px solid white;
+}
 
 @media (prefers-color-scheme: dark) {
   html {

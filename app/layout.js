@@ -1,4 +1,4 @@
-import { Open_Sans, Geist_Mono, Frank_Ruhl_Libre, Varela_Round } from "next/font/google";
+import { Open_Sans, Geist_Mono, Frank_Ruhl_Libre, Varela_Round, Geist, Cinzel_Decorative } from "next/font/google";
 import "./globals.css";
 
 const open_sans = Open_Sans({
@@ -13,9 +13,10 @@ const frank = Frank_Ruhl_Libre({
   weight: ['300', '400', '500', '800', '700', '800'],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const cinzel = Cinzel_Decorative({
+  variable: "--font-c",
   subsets: ["latin"],
+  weight: ['400', '700', '900'],
 });
 
 const varela = Varela_Round({ subsets: ["latin"], weight: ['400'], variable: "--font-a" })
@@ -29,7 +30,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={`${open_sans.variable} ${varela.variable} ${frank.variable}`}>
+      <body className={`${open_sans.variable} ${cinzel.variable} ${varela.variable} ${frank.variable}`}>
         {children}
       </body>
     </html>
