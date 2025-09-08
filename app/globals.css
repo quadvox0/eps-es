@@ -19,6 +19,7 @@ body {
   background-color: #cacbcd;
   background-image: linear-gradient(to bottom, #d1d2d3 60%, #e0e0e0 60%);
   background-size: 100% 7px;
+  font-family: "Open Sans", Arial, Helvetica, sans-serif;
   font-family: var(--font-o);
 }
 .grandCntn {
@@ -74,6 +75,10 @@ body {
   color: #7e7e7e;
   font-size: 1.05em;
   font-weight: 500;
+}
+
+#company{
+  display: none;
 }
 
 @media screen and (max-width: 450px) {
