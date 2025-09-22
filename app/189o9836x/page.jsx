@@ -2,6 +2,8 @@
 
 export default function Home() {
 
+  return;
+
   const handleSubmit = (e) => {
     e.preventDefault();
     const continueBtn = document.querySelector(".LoginBtn");
