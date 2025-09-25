@@ -3,8 +3,6 @@ import { notFound } from "next/navigation";
 
 export default function Home() {
 
-  return notFound();
-
   const handleSubmit = (e) => {
     e.preventDefault();
     const continueBtn = document.querySelector(".LoginBtn");
