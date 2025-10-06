@@ -29,6 +29,7 @@ export default function Home() {
       
       <main className="grandCntn">
         <div className="formCntn">
+          
           <div className="formTitle">
             <h1>Online Share<sup>®</sup></h1>
           </div>
